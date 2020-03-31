@@ -1,24 +1,22 @@
 import React from 'react'
-import logo from './logo.svg'
+import { Layout, PageHeader, Tag } from 'antd'
+import packageInfo from '../package.json'
+import 'antd/dist/antd.css'
 import './App.css'
 
 export function App() {
+  const { Header, Footer, Content } = Layout
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout>
+      <Header>
+        <PageHeader
+          backIcon="false"
+          title="go-link-shortener"
+          tags={<Tag>{packageInfo.version}</Tag>}
+        />
+      </Header>
+      <Content>Content</Content>
+      <Footer>Copyright &copy; 2020 thewizardplusplus</Footer>
+    </Layout>
   )
 }
