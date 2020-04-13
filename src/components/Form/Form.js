@@ -5,15 +5,12 @@ import './Form.css'
 export function Form() {
   const { Item } = AntForm
   return (
-    <AntForm layout="inline" onFinish={data => console.log(data)}>
-      <Item
-        label="URL"
-        name="url"
-        rules={[
-          { required: true, message: 'URL is required' },
-          { type: 'url', message: 'URL is invalid' },
-        ]}
-      >
+    <AntForm
+      layout="inline"
+      initialValues={{ url: '' }}
+      onFinish={data => console.log(data)}
+    >
+      <Item label="URL" name="url">
         <Input placeholder="http://example.com/" />
       </Item>
       <Item>
