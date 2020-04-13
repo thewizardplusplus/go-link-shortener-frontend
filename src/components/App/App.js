@@ -1,6 +1,6 @@
 import React from 'react'
 import { Layout, PageHeader, Tag } from 'antd'
-import packageInfo from '../package.json'
+import packageInfo from '../../../package.json'
 import 'antd/dist/antd.css'
 import './App.css'
 
