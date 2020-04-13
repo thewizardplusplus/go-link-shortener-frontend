@@ -2,6 +2,7 @@ import React from 'react'
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
 import { Navigation } from '../Navigation/Navigation.js'
 import { NavigationButton } from '../NavigationButton/NavigationButton.js'
+import { Form } from '../Form/Form.js'
 
 export function Router() {
   return (
@@ -12,6 +13,7 @@ export function Router() {
         <Switch>
           <Route exact path="/">
             Home <NavigationButton />
+            <Form />
           </Route>
           <Route path="/success">Success</Route>
           <Route path="/error">Error</Route>
