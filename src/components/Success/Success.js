@@ -14,6 +14,7 @@ export function Success() {
       extra={
         <span>
           <Input readOnly defaultValue={code} />
+
           <CopyToClipboard
             text={code}
             onCopy={() => {

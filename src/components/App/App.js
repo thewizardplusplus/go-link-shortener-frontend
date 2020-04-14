@@ -16,9 +16,11 @@ export function App() {
           tags={<Tag>{packageInfo.version}</Tag>}
         />
       </Header>
+
       <Content>
         <Router />
       </Content>
+
       <Footer>Copyright &copy; 2020 thewizardplusplus</Footer>
     </Layout>
   )
