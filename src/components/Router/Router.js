@@ -15,7 +15,7 @@ export function Router() {
             Home <NavigationButton />
             <Form />
           </Route>
-          <Route path="/success">Success</Route>
+          <Route path="/success/:code">Success</Route>
           <Route path="/error">Error</Route>
           <Route>
             <Redirect to="/error" />

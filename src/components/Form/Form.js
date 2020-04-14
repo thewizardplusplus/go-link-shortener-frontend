@@ -1,14 +1,28 @@
 import React from 'react'
 import { Form as AntForm, Input, Button } from 'antd'
+import { useHistory } from 'react-router-dom'
 import './Form.css'
 
+async function createLink(data) {
+  const response = await fetch('/api/v1/links/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data),
+  })
+  return await response.json()
+}
+
 export function Form() {
-  const { Item } = AntForm
+  const { Item } = AntForm,
+    history = useHistory()
   return (
     <AntForm
       layout="inline"
       initialValues={{ url: '' }}
-      onFinish={data => console.log(data)}
+      onFinish={async data => {
+        const link = await createLink(data)
+        history.push('/success/' + link.Code)
+      }}
     >
       <Item label="URL" name="url">
         <Input placeholder="http://example.com/" />
