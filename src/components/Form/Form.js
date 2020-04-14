@@ -1,5 +1,5 @@
-import React from 'react'
-import { Form as AntForm, Input, Button } from 'antd'
+import React, { useState } from 'react'
+import { Spin, Form as AntForm, Input, Button } from 'antd'
 import { useHistory } from 'react-router-dom'
 import './Form.css'
 
@@ -14,24 +14,29 @@ async function createLink(data) {
 
 export function Form() {
   const { Item } = AntForm,
+    [loading, setLoading] = useState(false),
     history = useHistory()
   return (
-    <AntForm
-      layout="inline"
-      initialValues={{ url: '' }}
-      onFinish={async data => {
-        const link = await createLink(data)
-        history.push('/success/' + link.Code)
-      }}
-    >
-      <Item label="URL" name="url">
-        <Input placeholder="http://example.com/" />
-      </Item>
-      <Item>
-        <Button type="primary" htmlType="submit">
-          Shorten
-        </Button>
-      </Item>
-    </AntForm>
+    <Spin spinning={loading}>
+      <AntForm
+        layout="inline"
+        initialValues={{ url: '' }}
+        onFinish={async data => {
+          setLoading(true)
+
+          const link = await createLink(data)
+          history.push('/success/' + link.Code)
+        }}
+      >
+        <Item label="URL" name="url">
+          <Input placeholder="http://example.com/" />
+        </Item>
+        <Item>
+          <Button type="primary" htmlType="submit">
+            Shorten
+          </Button>
+        </Item>
+      </AntForm>
+    </Spin>
   )
 }
