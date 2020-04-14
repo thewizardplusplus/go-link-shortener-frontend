@@ -21,7 +21,7 @@ export function Success() {
               message.success('Shortened URL has been copied!')
             }}
           >
-            <Button type="primary">Copy</Button>
+            <Button>Copy</Button>
           </CopyToClipboard>
         </span>
       }

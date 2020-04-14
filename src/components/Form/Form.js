@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { Spin, Form as AntForm, Input, Button, message } from 'antd'
 import { useHistory } from 'react-router-dom'
-import './Form.css'
 
 async function createLink(data) {
   const response = await fetch('/api/v1/links/', {

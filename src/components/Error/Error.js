@@ -1,5 +1,6 @@
 import React from 'react'
 import { Result } from 'antd'
+import './Error.css'
 
 export function Error() {
   return (
