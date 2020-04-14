@@ -2,15 +2,6 @@ body {
   background-color: #f0f2f5;
 }
 
-.ant-page-header {
-  padding-left: 0;
-  padding-right: 0;
-}
-
-.ant-page-header-heading-title {
-  color: #f0f2f5;
-}
-
 .ant-layout-content {
   padding: 24px 50px;
 }

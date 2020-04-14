@@ -1,7 +1,7 @@
 import React from 'react'
-import { Layout, PageHeader, Tag } from 'antd'
+import { Layout } from 'antd'
+import { PageHeader } from '../PageHeader/PageHeader.js'
 import { RouteSwitch } from '../RouteSwitch/RouteSwitch.js'
-import packageInfo from '../../../package.json'
 import 'antd/dist/antd.css'
 import './App.css'
 
@@ -10,11 +10,7 @@ export function App() {
   return (
     <Layout>
       <Header>
-        <PageHeader
-          backIcon="false"
-          title="go-link-shortener"
-          tags={<Tag>{packageInfo.version}</Tag>}
-        />
+        <PageHeader />
       </Header>
 
       <Content>
