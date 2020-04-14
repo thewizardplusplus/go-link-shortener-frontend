@@ -1,6 +1,6 @@
 import React from 'react'
 import { Layout, PageHeader, Tag } from 'antd'
-import { Router } from '../Router/Router.js'
+import { RouteSwitch } from '../RouteSwitch/RouteSwitch.js'
 import packageInfo from '../../../package.json'
 import 'antd/dist/antd.css'
 import './App.css'
@@ -18,7 +18,7 @@ export function App() {
       </Header>
 
       <Content>
-        <Router />
+        <RouteSwitch />
       </Content>
 
       <Footer>Copyright &copy; 2020 thewizardplusplus</Footer>
