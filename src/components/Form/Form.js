@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Spin, Form as AntForm, Input, Button } from 'antd'
+import { Spin, Form as AntForm, Input, Button, message } from 'antd'
 import { useHistory } from 'react-router-dom'
 import './Form.css'
 
@@ -23,9 +23,13 @@ export function Form() {
         initialValues={{ url: '' }}
         onFinish={async data => {
           setLoading(true)
-
-          const link = await createLink(data)
-          history.push('/success/' + link.Code)
+          try {
+            const link = await createLink(data)
+            history.push('/success/' + link.Code)
+          } catch (exception) {
+            setLoading(false)
+            message.error(exception.toString())
+          }
         }}
       >
         <Item label="URL" name="url">
