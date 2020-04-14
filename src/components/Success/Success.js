@@ -5,7 +5,9 @@ import { CopyToClipboard } from 'react-copy-to-clipboard'
 import './Success.css'
 
 export function Success() {
+  const { protocol, host } = window.location
   const { code } = useParams()
+  const url = `${protocol}//${host}/redirect/${code}`
   return (
     <Result
       className="success-component"
@@ -13,10 +15,10 @@ export function Success() {
       title="Successfully Shortened the URL!"
       extra={
         <span>
-          <Input readOnly defaultValue={code} />
+          <Input readOnly defaultValue={url} />
 
           <CopyToClipboard
-            text={code}
+            text={url}
             onCopy={() => {
               message.success('Shortened URL has been copied!')
             }}
