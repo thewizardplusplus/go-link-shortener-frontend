@@ -3,5 +3,15 @@
 }
 
 .ant-page-header-heading-title {
+  margin-right: 16px;
+  padding-right: 0 !important;
   color: #f0f2f5 !important;
+}
+
+.ant-page-header-back {
+  height: 16px;
+}
+
+.ant-page-header-back .anticon {
+  color: #f0f2f5;
 }
