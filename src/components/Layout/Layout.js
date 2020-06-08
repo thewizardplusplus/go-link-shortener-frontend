@@ -6,7 +6,7 @@ import 'antd/dist/antd.css'
 import './Layout.css'
 
 export function Layout() {
-  const { Header, Footer, Content } = AntLayout
+  const { Header, Content, Footer } = AntLayout
   return (
     <AntLayout>
       <Header>
