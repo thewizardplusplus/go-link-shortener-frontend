@@ -1,20 +1,24 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { Result, Input, Button, message } from 'antd'
-import { useParams } from 'react-router-dom'
 import { CopyToClipboard } from 'react-copy-to-clipboard'
+import { useParams } from 'react-router-dom'
 import './Success.css'
 
-export function Success() {
+function generateUrl(code) {
   const { protocol, host } = window.location
+  return `${protocol}//${host}/redirect/${code}`
+}
+
+export function Success() {
   const { code } = useParams()
-  const url = `${protocol}//${host}/redirect/${code}`
+  const url = generateUrl(code)
   return (
     <Result
       className="success-component"
       status="success"
       title="Successfully Shortened the URL!"
       extra={
-        <span>
+        <Fragment>
           <Input readOnly defaultValue={url} />
 
           <CopyToClipboard
@@ -25,7 +29,7 @@ export function Success() {
           >
             <Button>Copy</Button>
           </CopyToClipboard>
-        </span>
+        </Fragment>
       }
     />
   )
