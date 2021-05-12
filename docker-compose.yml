@@ -1,0 +1,12 @@
+version: '3'
+services:
+  go-link-shortener-frontend:
+    build: .
+    volumes:
+      - ./build:/node/src/go-link-shortener-frontend/build-external
+    command:
+      - cp
+      - --recursive
+      - --no-target-directory
+      - /node/src/go-link-shortener-frontend/build
+      - /node/src/go-link-shortener-frontend/build-external
