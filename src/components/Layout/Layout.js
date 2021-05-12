@@ -17,7 +17,7 @@ export function Layout() {
         <RouteSwitch />
       </Content>
 
-      <Footer>Copyright &copy; 2020 thewizardplusplus</Footer>
+      <Footer>Copyright &copy; 2020-2021 thewizardplusplus</Footer>
     </AntLayout>
   )
 }
