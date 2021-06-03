@@ -27,9 +27,8 @@ export function Form() {
             const link = await createLink(data)
             history.push('/success/' + link.Code)
           } catch (exception) {
-            message.error(exception.toString())
-          } finally {
             setLoading(false)
+            message.error(exception.toString())
           }
         }}
       >
