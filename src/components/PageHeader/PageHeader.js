@@ -13,7 +13,7 @@ export function PageHeader() {
           <HomeOutlined />
         </Link>
       }
-      title="go-link-shortener"
+      title={<Link to="/">{'go-link-shortener'}</Link>}
       tags={<Tag>{packageInfo.version}</Tag>}
       onBack={() => null}
     />
