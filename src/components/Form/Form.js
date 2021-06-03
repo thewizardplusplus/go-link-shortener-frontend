@@ -8,7 +8,12 @@ async function createLink(data) {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(data),
   })
-  return await response.json()
+  const responseData = await response.json()
+  if (!response.ok) {
+    throw new Error(responseData.Error)
+  }
+
+  return responseData
 }
 
 export function Form() {
