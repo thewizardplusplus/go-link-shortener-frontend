@@ -2,16 +2,35 @@
   padding: 16px 0 !important;
 }
 
-.ant-page-header-heading-title {
-  margin-right: 16px;
-  padding-right: 0 !important;
-  color: #f0f2f5 !important;
-}
-
 .ant-page-header-back {
   height: 16px;
 }
 
 .ant-page-header-back .anticon {
   color: #f0f2f5;
+}
+
+.ant-page-header-back .anticon:hover {
+  color: #40a9ff;
+}
+
+.ant-page-header-heading-title {
+  margin-right: 16px;
+  padding-right: 0 !important;
+}
+
+.ant-page-header-heading-title a {
+  color: #f0f2f5;
+}
+
+.ant-page-header-heading-title a:hover {
+  color: #40a9ff;
+}
+
+.ant-page-header-heading-tags .ant-tag {
+  background: #f0f2f5;
+}
+
+.ant-page-header-heading-tags .ant-tag:hover {
+  opacity: 1;
 }
