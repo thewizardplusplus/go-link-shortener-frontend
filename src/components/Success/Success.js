@@ -4,14 +4,16 @@ import { CopyToClipboard } from 'react-copy-to-clipboard'
 import { useParams } from 'react-router-dom'
 import './Success.css'
 
-function generateUrl(code) {
+function generateUrl(serverID, code) {
   const { protocol, host } = window.location
-  return `${protocol}//${host}/redirect/${code}`
+  return serverID !== undefined
+    ? `${protocol}//${host}/redirect/${serverID}:${code}`
+    : `${protocol}//${host}/redirect/${code}`
 }
 
 export function Success() {
-  const { code } = useParams()
-  const url = generateUrl(code)
+  const { serverID, code } = useParams()
+  const url = generateUrl(serverID, code)
   return (
     <Result
       className="success-component"
