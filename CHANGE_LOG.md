@@ -1,5 +1,12 @@
 # Change Log
 
+## [v1.1](https://github.com/thewizardplusplus/go-link-shortener-frontend/tree/v1.1) (2021-08-20)
+
+Generating a redirect link from a server ID and a link code (automatic selection of the option).
+
+- generating a redirect link (automatic selection of the option):
+  - from a server ID and a link code.
+
 ## [v1.0.2](https://github.com/thewizardplusplus/go-link-shortener-frontend/tree/v1.0.2) (2021-06-03)
 
 Improve the page header and fix the bugs in the form for creating a link.
