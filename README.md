@@ -15,7 +15,9 @@ Front-end of the service for shorting links.
     - animating interaction with the back-end;
     - displaying errors on interaction with the back-end in the form of pop-up notifications;
   - result of creating a link:
-    - generating a redirect link from a link code;
+    - generating a redirect link (automatic selection of the option):
+      - from a server ID and a link code;
+      - from a link code only;
     - copying a redirect link to a clipboard via a button click:
       - displaying a notification about successful copying to a clipboard;
   - any error (most often it's the "Not Found" error).
