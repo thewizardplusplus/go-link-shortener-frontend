@@ -30,7 +30,11 @@ export function Form() {
 
           try {
             const link = await createLink(data)
-            history.push('/success/' + link.Code)
+            const route =
+              link.ServerID !== undefined
+                ? `/success/${link.ServerID}:${link.Code}`
+                : `/success/${link.Code}`
+            history.push(route)
           } catch (exception) {
             setLoading(false)
             message.error(exception.toString())
