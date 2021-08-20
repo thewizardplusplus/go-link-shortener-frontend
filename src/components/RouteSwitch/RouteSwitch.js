@@ -11,6 +11,10 @@ export function RouteSwitch() {
         <Form />
       </Route>
 
+      <Route path="/success/:serverID::code">
+        <Success />
+      </Route>
+
       <Route path="/success/:code">
         <Success />
       </Route>
